@@ -5,10 +5,10 @@ const MainPage = () => {
   const [data, setData] = useState({})
 
   useEffect(() => {
-    axios.get('localhost:3000/books')
+    axios.get('books')
     .then(res => {
       const d = res.data
-      console.log(data)
+      console.log(d)
     })
     .catch(err => {
       console.log(err)
