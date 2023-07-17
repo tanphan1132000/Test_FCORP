@@ -22,30 +22,34 @@ const NestedComment = ({ rootID, replyID, reply, updateReply, deleteReply }) => 
         deleteReply(rootID, id);
     }
 
+    const buttonStyle = "w-fit";
+
     return (
         <>
-                <div className="max-w-sm h-fit mt-2">
-                    <p className="break-all bg-slate-300 rounded-lg p-2 max-w-xs">{reply}</p>
+            <div className="max-w-sm mt-2 ml-14">
+                <div>
+                    <p className="break-all bg-slate-200 rounded-lg p-2">{reply}</p>
                     {
                         isChange ?
                             <>
                                 <input
                                     ref={changeInput}
-                                    className="border-b-2 p-2 w-full mt-2 focus:outline-none"
+                                    className="border-b-2 w-full mt-2 focus:border-slate-300 focus:outline-none"
                                     placeholder="Change comment..."
                                     onKeyDown={(e) => UpdateReply(e, RootID, ID, changeInput?.current?.value)}
                                 />
                             </> : null
                     }
-                    <div className="flex justify-end space-x-2">
-                        <Button func={() => setIsChange(!isChange)}>
-                            <p className="text-sky-500 font-semibold text-xs">Modify</p>
-                        </Button>
-                        <Button func={() => DeleteReply(RootID, ID)}>
-                            <p className="text-sky-500 font-semibold text-xs">Delete</p>
-                        </Button>
-                    </div>
                 </div>
+                <div className="flex justify-end space-x-4">
+                    <Button func={() => setIsChange(!isChange)} style={buttonStyle}>
+                        <p className="font-semibold text-xs text-slate-500">Modify</p>
+                    </Button>
+                    <Button func={() => DeleteReply(RootID, ID)} style={buttonStyle}>
+                        <p className="font-semibold text-xs text-slate-500">Delete</p>
+                    </Button>
+                </div>
+            </div>
         </>
     )
 }

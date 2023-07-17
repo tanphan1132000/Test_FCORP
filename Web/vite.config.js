@@ -5,7 +5,7 @@ export default defineConfig({
   server: {
     proxy: {
       "/books": {
-        target: "http://localhost:3000",
+        target: "http://nodejsapp:3000",
         changeOrigin: true,
         secure: false
       }

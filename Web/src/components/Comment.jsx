@@ -30,40 +30,42 @@ const Comment = ({ comment, addReply, updateComment, deleteComment, updateReply,
         deleteComment(id);
     }
 
+    const buttonStyle = "w-fit";
+    
     return (
         <>
             <div className="flex flex-col">
-                <div className="max-w-sm h-fit mt-2">
-                    <p className="break-all bg-slate-300 rounded-lg p-2">{comment[ID]}</p>
+                <div className="max-w-sm mt-2">
+                    <p className="break-all bg-slate-200 rounded-lg p-2">{comment[ID]}</p>
                     {
                         isChange ?
                             <>
                                 <input 
                                     ref={changeInput}
-                                    className="border-b-2 p-2 w-full mt-2 focus:outline-none"
+                                    className="border-b-2 w-full mt-2 focus:border-slate-300 focus:outline-none"
                                     placeholder="Change comment..."
                                     onKeyDown={(e) => UpdateComment(e, ID, changeInput?.current?.value)}
                                 />
                             </> : null
                     }
-                    <div className="flex justify-end space-x-2">
-                        <Button func={() => setIsChange(!isChange)}>
-                            <p className="text-sky-500 font-semibold text-xs">Modify</p>
+                    <div className="flex justify-end space-x-4">
+                        <Button func={() => setIsChange(!isChange)} style={buttonStyle}>
+                            <p className="font-semibold text-xs text-slate-500">Modify</p>
                         </Button>
-                        <Button func={() => setIsReply(!isReply)}>
-                            <p className="text-sky-500 font-semibold text-xs">Reply</p>
+                        <Button func={() => setIsReply(!isReply)} style={buttonStyle}>
+                            <p className="font-semibold text-xs text-slate-500">Reply</p>
                         </Button>
-                        <Button func={() => DeleteComment(ID)}>
-                            <p className="text-sky-500 font-semibold text-xs">Delete</p>
+                        <Button func={() => DeleteComment(ID)} style={buttonStyle}>
+                            <p className="font-semibold text-xs text-slate-500">Delete</p>
                         </Button>
                     </div>
                 </div>
-                <div className="flex flex-col items-center">
+                <div className="flex flex-col">
                     {
-                        isReply ? <div>
+                        isReply ? <div className="max-w-sm mt-2 ml-14">
                             <input
                                 ref={replyInput}
-                                className="w-full border-b-2 p-2 mt-2 focus:outline-none"
+                                className="w-full border-b-2 focus:border-slate-300 focus:outline-none"
                                 placeholder="Reply something..."
                                 onKeyDown={(e) => AddReply(e, ID, replyInput?.current?.value)}
                             />

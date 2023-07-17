@@ -82,10 +82,10 @@ const CommentSection = ({ comments, setComments }) => {
     return (
         <>
             <div className="h-px w-full bg-slate-300 my-2"></div>
-            <div>
-                <div className="flex relative w-full justify-center">
+            <div className="flex flex-col">
+                <div className="flex w-full max-w-sm">
                     <input
-                        className="border-2 rounded-full p-2 px-4 w-2/3 focus:outline-none"
+                        className="border-[1px] border-slate-300 rounded-full p-2 px-4 w-full focus:border-slate-400 focus:outline-none"
                         ref={commentInput}
                         placeholder="Comment something..."
                         onKeyDown={addComment}

@@ -22,7 +22,7 @@ const MainPage = () => {
         <div className='flex h-40 w-5/6 rounded-xl bg-cover bg-[url(src/assets/adoptbanner.jpg)] p-5 justify-center items-center shadow-2xl'>
           <p className='text-6xl text-white font-bold font-mono shadow-3xl'>BOOKS STORE</p>
         </div>
-        <div className='flex flex-cols flex-wrap justify-center gap-5 text-sm'>
+        <div className='flex flex-wrap justify-center gap-5 text-sm'>
           {
             data?.map((book, id) => {
               return <Book key={id} book={book} />

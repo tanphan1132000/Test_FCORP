@@ -1,8 +1,8 @@
 
-const Button = ({ func, children }) => {
+const Button = ({ func, children, style }) => {
     return (
         <>
-            <button className="w-fit mt-2 border-2 border-sky-500 rounded-full px-2" onClick={() => func()}>
+            <button className={style} onClick={() => func()}>
                 {children}
             </button>
         </>

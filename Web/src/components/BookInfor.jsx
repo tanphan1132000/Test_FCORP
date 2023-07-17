@@ -4,10 +4,10 @@ const BookInfor = ({ style, book, children, isFullDescription }) => {
     return (
         <>
             <div className={style}>
-                <div className="w-1/5">
-                    <img src='src/assets/book.png' />
+                <div className="flex max-[620px]:justify-center">
+                    <img className='h-32 w-40 max-[620px]:w-32' src='src/assets/book.png' />
                 </div>
-                <div className='flex flex-col w-4/5'>
+                <div className='flex flex-col w-4/5 max-[860px]:w-full'>
                     <h1 className='text-lg font-semibold'>{book.title}</h1>
                     <h2 className='text-base italic mb-2'>{book.author}</h2>
                     <div className='flex flex-row flex-wrap gap-x-4 gap-y-2'>
@@ -20,7 +20,10 @@ const BookInfor = ({ style, book, children, isFullDescription }) => {
                                 <p><span className='font-semibold'>Description: </span>{book.description}</p>
                             </Dotdotdot> : <p><span className='font-semibold'>Description: </span>{book.description}</p>
                     }
-                    {children}
+                    <div className='flex max-[620px]:justify-center'>
+                      {children}  
+                    </div>
+                    
                 </div>
             </div>
         </>
