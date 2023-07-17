@@ -13,7 +13,7 @@ Then, if you want to add dummy data into elasticsearch, using this command
 ```bash
 ./migrate.sh
 ```
-Or if you want to add dummy data manualy, you can use Postman and call the api in your js-dev-test.md file
+Or if you want to add dummy data manually, you can use Postman and call the api in your js-dev-test.md file
 
 ## Demo
 #### Main page
