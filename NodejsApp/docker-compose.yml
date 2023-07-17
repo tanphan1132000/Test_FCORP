@@ -1,0 +1,24 @@
+services:
+  web:
+    build: .
+    ports:
+      - 3000:3000
+    # For local development
+    # volumes:
+    #   - ./:/app
+    # command:
+    #   ["npm", "run", "dev"]
+    depends_on:
+      - elasticsearch
+  elasticsearch:
+    image: "elasticsearch:7.17.10"
+    ports:
+      - 19200:9200
+    # volumes:
+    #   - es-storage:/usr/share/elasticsearch/data
+    environment:
+      - xpack.security.enabled=false
+      - discovery.type=single-node
+      - "ES_JAVA_OPTS=-Xms500m -Xmx500m"
+# volumes:
+#   es-storage:
