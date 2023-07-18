@@ -15,6 +15,7 @@ Then, if you want to add dummy data into elasticsearch, using this command
 ```
 Or if you want to add dummy data manually, you can use Postman and call the api in your js-dev-test.md file
 
+Finally, you can access to the webpage by localhost:5173
 ## Demo
 #### Main page
 ![Screenshot](./picture_demo/scrshot_1.png)
